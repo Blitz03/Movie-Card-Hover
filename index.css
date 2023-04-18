@@ -1,0 +1,97 @@
+/* Importing The Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --main-transition: 0.5s all ease-in-out;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("./images/background.jpg");
+  background-size: cover;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(20px);
+  z-index: -1;
+}
+ul {
+  list-style: none;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card ion-icon.heart {
+  position: absolute;
+  right: -50px;
+  top: 20px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--main-transition);
+  z-index: 1;
+}
+.card:hover ion-icon.heart {
+  right: 20px;
+}
+.card .image {
+  overflow: hidden;
+  border-radius: 20px;
+  height: 600px;
+}
+.card .image img {
+  border-radius: 20px;
+  transition: var(--main-transition);
+  height: 100%;
+}
+.card:hover .image img {
+  transform: scale(1.2);
+}
+.card .details {
+  position: absolute;
+  padding: 20px;
+  bottom: -50%;
+  backdrop-filter: blur(20px);
+  left: 0;
+  border-radius: 20px;
+  transition: var(--main-transition);
+  min-height: 300px;
+}
+.card:hover .details {
+  bottom: 0;
+}
+.card .details h2 {
+  color: #fff;
+  letter-spacing: 0.7px;
+  font-size: 24px;
+}
+.card .details ul.rating {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+.card .details ul.rating li {
+  color: #ffdf00;
+  font-size: 19px;
+}
+.card .details p {
+  margin-top: 10px;
+  color: #bababa;
+  line-height: 1.8;
+}
